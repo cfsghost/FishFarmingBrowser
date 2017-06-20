@@ -4,6 +4,7 @@ import QtQuick.Layouts 1.3
 import QtWebEngine 1.2
 
 ApplicationWindow {
+	id: window;
 	visible: true;
 	color: 'black';
 	title: 'FishFarming';
@@ -11,6 +12,8 @@ ApplicationWindow {
 	height: 768;
 
 	header: ToolBar {
+		id: toolbar;
+
 		RowLayout {
 			anchors.fill: parent;
 			ToolButton {
@@ -87,6 +90,18 @@ ApplicationWindow {
 		url: 'https://www.google.com/'
 		opacity: 0;
 		scale: 0;
+		onFullScreenRequested: function(request) {
+
+            if (request.toggleOn) {
+				toolbar.visible = false;
+                window.showFullScreen();
+            } else {
+				toolbar.visible = true;
+                window.showNormal();
+			}
+
+            request.accept()
+        }
 
 		Behavior on scale {
 			NumberAnimation {
