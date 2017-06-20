@@ -37,7 +37,7 @@ ApplicationWindow {
 				Layout.fillWidth: true;
 				Layout.rightMargin: 20;
 
-				onEditingFinished: {
+				Keys.onReturnPressed: {
 					var protocols = [
 						'http',
 						'https'
