@@ -20,6 +20,6 @@
   "devDependencies": {},
   "optionalDependencies": {},
   "dependencies": {
-    "brig": "^0.1.16"
+    "brig": ">=0.1.16"
   }
 }
