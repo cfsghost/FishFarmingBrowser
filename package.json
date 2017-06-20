@@ -1,0 +1,25 @@
+{
+  "name": "fish-farming-browser",
+  "version": "0.0.1",
+  "author": "Fred Chiend <cfsghost@gmail.com>",
+  "description": "Web browser which is based on brig",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/cfsghost/FishFarmingBrowser.git"
+  },
+  "homepage": "http://github.com/cfsghost/FishFarmingBrowser",
+  "main": "./app.js",
+  "keywords": [
+    "gui",
+    "ui",
+    "graphics"
+  ],
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "devDependencies": {},
+  "optionalDependencies": {},
+  "dependencies": {
+    "brig": "^0.1.16"
+  }
+}
