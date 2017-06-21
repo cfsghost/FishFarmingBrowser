@@ -43,6 +43,7 @@ ApplicationWindow {
 						'https'
 					];
 
+					// Check whether URL lacks protocol
 					var found = protocols
 						.map(function(protocol) {
 							return (text.indexOf(protocol + '://') === 0);
@@ -90,24 +91,25 @@ ApplicationWindow {
 		url: 'https://www.google.com/'
 		opacity: 0;
 		scale: 0;
-		onFullScreenRequested: function(request) {
-
-            if (request.toggleOn) {
-				toolbar.visible = false;
-                window.showFullScreen();
-            } else {
-				toolbar.visible = true;
-                window.showNormal();
-			}
-
-            request.accept()
-        }
 
 		Behavior on scale {
 			NumberAnimation {
 				duration: 600;
 				easing.type: Easing.InOutQuart;
 			}
+		}
+
+		onFullScreenRequested: function(request) {
+
+			if (request.toggleOn) {
+				toolbar.visible = false;
+				window.showFullScreen();
+			} else {
+				toolbar.visible = true;
+				window.showNormal();
+			}
+
+			request.accept()
 		}
 
 		onUrlChanged: {
